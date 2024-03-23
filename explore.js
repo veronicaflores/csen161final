@@ -28,19 +28,23 @@ async function populateGrid() {
       });
       
       const likeButton = document.createElement('button');
-        likeButton.classList.add('like-button');
-        likeButton.innerHTML = 'Like';
+      likeButton.classList.add('like-button');
+      likeButton.innerHTML = 'Like';
 
-        // Set up event listener for the like button
-        likeButton.addEventListener('click', function() {
-          // Implement your like functionality here, e.g., incrementing a like counter
-          // For demonstration, let's just alert that the image is liked
-          //alert(`You liked "${item.title}"`);
-        });
+      // Set up event listener for the like button
+      likeButton.addEventListener('click', function() {
+        // Prompt the user to select a group
+        const selectedGroup = prompt('Please select a group to add the image to:');
+        if (selectedGroup) {
+          // Save the liked image to localStorage
+          saveLikedImage(item.imageUrl, item.title, selectedGroup);
+          // Redirect to liked.html
+          window.location.href = 'liked.html';
+        }
+      });
 
       gridItem.appendChild(image);
       gridItem.appendChild(saveButton);
-      //added this line 46
       gridItem.appendChild(likeButton);
       gridContainer.appendChild(gridItem);
     });
@@ -48,7 +52,6 @@ async function populateGrid() {
     console.error('Error fetching data:', error.message);
   }
 }
-
 
 //Function to download the image
 function downloadImage(url) {
@@ -65,15 +68,24 @@ function downloadImage(url) {
   document.body.removeChild(link);
 }
 
-// // Call the populateGrid function when the page loads
+// Call the populateGrid function when the page loads
 window.addEventListener('load', populateGrid);
 
-function saveLikedImage(imageUrl, title) {
-  // Retrieve existing liked images or initialize an empty array
-  const likedImages = JSON.parse(localStorage.getItem('likedImages')) || [];
-  // Add the new liked image
-  likedImages.push({ imageUrl, title });
-  // Save the updated liked images back to localStorage
-  localStorage.setItem('likedImages', JSON.stringify(likedImages));
-}
+// Function to save the liked image to localStorage
+function saveLikedImage(imageUrl, title, group) {
+  // Retrieve existing liked data or initialize an empty object
+  const likedData = JSON.parse(localStorage.getItem('likedData')) || { groups: [] };
 
+  // Find the group or create a new one if it doesn't exist
+  let groupIndex = likedData.groups.findIndex(g => g.name === group);
+  if (groupIndex === -1) {
+    groupIndex = likedData.groups.length;
+    likedData.groups.push({ name: group, images: [] });
+  }
+
+  // Add the new liked image to the selected group
+  likedData.groups[groupIndex].images.push({ imageUrl, title });
+
+  // Save the updated liked data back to localStorage
+  localStorage.setItem('likedData', JSON.stringify(likedData));
+}
