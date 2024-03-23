@@ -1,3 +1,108 @@
-.like-button{
-	background-color: black;
+/* Add new style for the delete button */
+.delete-button {
+    display: none; /* Hide delete button by default */
+    position: absolute;
+    bottom: 5px; /* Adjust position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.8); /* Red background with transparency */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Change delete button color on hover */
+.delete-button:hover {
+    background-color: rgba(255, 0, 0, 1); /* Darker red color */
+}
+
+/* Show delete button when hovering over the grid item */
+.grid-item:hover .delete-button {
+    display: block;
+}
+
+/* Style for the group container */
+.group-container {
+	border: 2px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the container */
+    margin: 20px auto; /* Center group container and add margin above and below */
+}
+
+/* Style for the delete button */
+.delete-button, .delete-group-button {
+    display: none; /* Hide delete button by default */
+    background-color: #dc3545; /* Red background color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px;
+    margin-top: 5px; /* Add margin to separate buttons */
+    cursor: pointer;
+}
+
+/* Show delete button when hovering over grid item */
+.grid-item:hover .delete-button, .grid-container:hover .delete-group-button {
+    display: block;
+}
+
+/* Style for the "Add Group" button */
+#addGroupButton {
+    display: block;
+    margin: 20px auto; /* Center the button and add margin from the top */
+    background-color: #007bff; /* Blue background color */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#addGroupButton:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+.group-name-link {
+    display: block;
+	font-family: HK Grotesk;
+	font-size: 20px;
+    text-align: center;
+	font-weight: bold;
+    padding: 10px;
+    color: #333; /* Default color */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.group-name-link:hover {
+    color: green; /* Color change on hover */
+    text-decoration: none;
+}
+
+.group-container {
+    margin-bottom: 20px; /* Spacing between groups */
+}
+
+.delete-group-button {
+    display: block;
+    margin: 10px auto; /* Centering the delete group button */
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-group-button:hover {
+    background-color: #c82333;
+}
+
+.group-container {
+    margin-bottom: 20px; /* Spacing between groups */
+    max-height: calc(4 * (250px + 10px)); /* Maximum height for 4 images */
+    overflow-y: auto; /* Enable vertical scrollbar if content exceeds max height */
 }
