@@ -40,26 +40,26 @@
           We hope you use our site to spark some creativity and let your imagination run wild! 
           If you have any questions or concerns please feel free to reach out to us!
         </p>
-        
+
         <form method="POST" action="contactform.php" >
-          <label for="fname">First Name</label><br/>
-          <input type="text" id="fname" name="firstname">
-          <br/><br/>
-          
-          <label for="lname">Last Name</label><br/>
-          <input type="text" id="lname" name="lastname">
-          <br/><br/>
-          
-          <label for="email">Email</label><br/>
-          <input type="text" name="email">
-          <br/><br/>
-          
-          <hr>
-          <label for="subject">Message</label> <br/>
-          <textarea id="subject" name="subject" placeholder="Comments/Questions"></textarea>
-          
-          <br/><br/>
-          <input type="submit" value="Submit">
+            <label for="fname">First Name</label><br/>
+            <input type="text" id="fname" name="firstname" required>
+            <br/><br/>
+            
+            <label for="lname">Last Name</label><br/>
+            <input type="text" id="lname" name="lastname" required>
+            <br/><br/>
+            
+            <label for="email">Email</label><br/>
+            <input type="email" id="email" name="email" required>
+            <br/><br/>
+            
+            <hr>
+            <label for="subject">Message</label> <br/>
+            <textarea id="subject" name="subject" placeholder="Comments/Questions" required></textarea>
+            
+            <br/><br/>
+            <input type="submit" value="Submit">
         </form>
         
       </div>
