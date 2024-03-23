@@ -1,3 +1,11 @@
+body {
+
+  background-color: #FAEBE0;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-height: 87vh;
+}
+
 body{
   font-family: HK Grotesk;
 }
@@ -22,3 +30,32 @@ body{
   color: black;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.grid-item {
+  position: relative; /* Make the container relative for absolute positioning of the button */
+  display: table-cell;
+  width: 200px; /* Set a fixed width for each grid item */
+  height: 200px; /* Set a fixed height for each grid item */
+  padding: 5px; /* Adjust padding to reduce spacing around images */
+  border-radius: 10px; /* Rounded borders */
+  background-color: #FAEBE0; /* Background color */
+  text-align: center; /* Center align contents */
+  transition: opacity 0.3s ease, background-color 0.3s ease; /* Add transition effect for opacity and background color */
+}
+
+.grid-item:hover {
+  opacity: 0.9; /* Reduce opacity on hover */
+  background-color: rgba(250, 235, 224, 0.8); /* Make the background slightly darker on hover */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%; /* Ensure image fills its container */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 10px; /* Rounded borders */
+}
