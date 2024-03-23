@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+   <!--  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://cdn.glitch.global/a77b0f01-b027-4550-a0a5-f433470b6284/shirt.ico?v=1711070994846" /> -->
+
+    <!--
+      This is the page head - it contains info the browser uses
+      Like the title, which appears on the browser tab but not inside the page
+      Further down you'll see the content that displays in the page
+    -->
+    <title>Thrift It!</title>
+
+     <link rel="stylesheet" type="text/css" href="style.css"/>
+
+     <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav id="navBar">
+      <a class="active" href="home.html">Home</a>
+      <a class="active" href="explore.html">Explore</a>
+      <a class="active" href="liked.html">Liked</a>
+      <a class="active" href="about.html">About Us</a>
+     </nav>
+  
+    <div class="wrapper">
+      <div class="content" role="main">
+        
+        <h1 class="title">Thrift It!</h1>
+        <h2>About Us</h2>
+        <p>
+          Welcome to Thrift It! We've got all sorts of inspiration!
+          From fashion, to photoshoots, to beautiful sceneries, and to exploring the world.
+          We hope you use our site to spark some creativity and let your imagination run wild! 
+          If you have any questions or concerns please feel free to reach out to us!
+        </p>
+        
+        <form method="POST" action="contactform.php" >
+          <label for="fname">First Name</label><br/>
+          <input type="text" id="fname" name="firstname">
+          <br/><br/>
+          
+          <label for="lname">Last Name</label><br/>
+          <input type="text" id="lname" name="lastname">
+          <br/><br/>
+          
+          <label for="email">Email</label><br/>
+          <input type="text" name="email">
+          <br/><br/>
+          
+          <hr>
+          <label for="subject">Message</label> <br/>
+          <textarea id="subject" name="subject" placeholder="Comments/Questions"></textarea>
+          
+          <br/><br/>
+          <input type="submit" value="Submit">
+        </form>
+        
+      </div>
+    </div>
+    <footer class="footer">&copy; Thrift It!</footer>
+  </body>
+</html>

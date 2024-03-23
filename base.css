@@ -1,0 +1,24 @@
+body{
+  font-family: HK Grotesk;
+}
+#navBar {
+  background-color: #C1AC95;
+  overflow: hidden;
+  border-bottom: 2px solid #8E8271; 
+}
+
+#navBar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#navBar a:hover {
+  background-color: #B5CDA3;
+  color: black;
+}
+
